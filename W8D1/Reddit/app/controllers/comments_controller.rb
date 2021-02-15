@@ -8,9 +8,8 @@ class CommentsController < ApplicationController
 
     def create
         @comment = current_user.comments.new(comment_params)
-
         if @comment.save
-            redirect_to post_url(params[:post_id])
+            redirect_to post_url(comment_params[:post_id])
         else
             flash[:errors] = @comment.errors.full_messages
             render :new
@@ -19,6 +18,6 @@ class CommentsController < ApplicationController
 
     private
     def comment_params
-        params.require(:comment).permit(:body)
+        params.require(:comment).permit(:body, :post_id)
     end
 end
