@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <% unless logged_in? %>
+      <a href="<%= new_session_url %>">Sign In</a>
+    <% end %>
+    
     <%= yield %>
+
+    <% if flash[:errors] %>
+      <p><%= flash[:errors].join(", ") %></p>
+    <% end %>
   </body>
 </html>
