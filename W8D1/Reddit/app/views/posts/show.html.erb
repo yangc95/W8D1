@@ -1,0 +1,26 @@
+
+<%# Need to display # of upvotes at beginning of h1 title %>
+<h1><a href="<%= post_url(@post) %>"><%= @post.title %></a> by <%= @post.author.username %></h1>
+<h3>Content</h3>
+<p><%= @post.content %></p>
+
+<%# forms for upvote and downvote %>
+<button>Upvote</button>
+<br>
+<button>Downvote</button>
+<br>
+
+<%# list all subs %>
+<h3>Subs</h3>
+<ul></ul>
+
+<h2>Comments</h2>
+<%# lists all comments %>
+<ul></ul>
+
+<a href="#">Comment on this post!</a>
+<%# link to new_comment_url %>
+<br>
+<br>
+
+<a href="<%= edit_post_url %>">Edit</a>

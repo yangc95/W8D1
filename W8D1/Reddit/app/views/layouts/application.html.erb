@@ -13,6 +13,8 @@
     <% unless logged_in? %>
       <a href="<%= new_session_url %>">Sign In</a>
     <% end %>
+
+    <%= render "layouts/nav" %>
     
     <%= yield %>
 
