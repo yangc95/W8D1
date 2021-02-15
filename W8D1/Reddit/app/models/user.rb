@@ -18,6 +18,7 @@ class User < ApplicationRecord
 
     attr_reader :password
 
+    has_many :comments, foreign_key: :author_id, dependent: :destroy
     has_many :subs,
         foreign_key: :moderator_id,
         class_name: :Sub

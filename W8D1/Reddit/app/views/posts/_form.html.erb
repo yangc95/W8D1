@@ -43,7 +43,7 @@
                 type="checkbox"
                 value="<%= sub.id %>"
                 name="post[sub_ids][]"
-                <%= "checked" if @post.sub_ids.include?(sub.id) %>
+                <%= "checked" if post.sub_ids.include?(sub.id) %>
             />
             </label>
         <% end %>

@@ -6,13 +6,15 @@
 #  title      :string           not null
 #  url        :string
 #  content    :text
-#  sub_id     :integer          not null
 #  author_id  :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 class Post < ApplicationRecord
     validates :title, presence: true
+    validates :subs, presence: true
+
+    has_many :comments, foreign_key: :post_id, dependent: :destroy
 
     belongs_to :author,
         foreign_key: :author_id,

@@ -12,13 +12,29 @@
 
 <%# list all subs %>
 <h3>Subs</h3>
-<ul></ul>
+<ul>
+    <% @post.subs.each do |sub| %>
+    <li>
+      <a href="<%= sub_url(sub) %>"><%= sub.title %></a> 
+    </li>
+    <% end %>
+</ul>
+
 
 <h2>Comments</h2>
-<%# lists all comments %>
-<ul></ul>
+<a href="<%= new_post_comment_url(@post) %>">Comment on this post!</a>
+<br> 
 
-<a href="#">Comment on this post!</a>
+<ul>
+    <% @post.comments.each do |comment| %>
+    <li>
+      <a href="#"><%= comment.body %></a> 
+    </li>
+    <%# need to add number of upvotes later %>
+    <% end %>
+</ul>
+
+
 <%# link to new_comment_url %>
 <br>
 <br>

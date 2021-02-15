@@ -9,8 +9,8 @@
 #  updated_at :datetime         not null
 #
 class PostSub < ApplicationRecord
-    validates :sub_id, presence: true, uniqueness: {scope: :post_id}
-    validates :post_id, presence: true
+    # validates :sub_id, presence: true, uniqueness: {scope: :post_id}
+    # validates :post_id, presence: true
 
     belongs_to :sub
     
